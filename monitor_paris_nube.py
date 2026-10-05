@@ -19,8 +19,12 @@ BUSQUEDAS = ["notebook", "televisor", "zapatillas", "celular", "refrigerador", "
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 ARCHIVO_VISTOS = Path("vistos_paris.json")
-HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
-
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "es-CL,es;q=0.9,en;q=0.8",
+    "Referer": "https://www.paris.cl/",
+}
 PATRON_PRECIOS = re.compile(
     r'"prices":\{"regular":\{[^{}]*"value":\{[^{}]*"centAmount":(\d+)[^{}]*\}\},'
     r'"offer":\{[^{}]*"value":\{[^{}]*"centAmount":(\d+)[^{}]*\},"discountOnRegular":([\d.eE-]+)\}'
